@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transition for hover */
+        }
+        .button:disabled {
+            background-color: #9e9e9e; /* Gray */
+            color: #d3d3d3; /* Light Gray */
+            cursor: not-allowed; /* Change cursor to indicate it's disabled */
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Terms and Conditions</h1>
+        <p>
+            By using this application, you agree to the following terms and conditions. Please read them carefully.
+            If you do not agree, you must not use this application.
+        </p>
+        <input type="checkbox" id="termsCheckbox">
+        <label for="termsCheckbox">I agree to the terms and conditions</label>
+        <br>
+        <button id="iconConsentButton" class="button" disabled>I Consent</button>
+    </div>
+
+    <script>
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const consentButton = document.getElementById('iconConsentButton');
+
+        // Enable the button when the checkbox is checked
+        termsCheckbox.addEventListener('change', () => {
+            consentButton.disabled = !termsCheckbox.checked; // Enable button if checkbox is checked
+            consentButton.style.cursor = termsCheckbox.checked ? 'pointer' : 'not-allowed'; // Change cursor based on checkbox state
+        });
+
+        // Redirect to the selfie mode page when the button is clicked
+        consentButton.addEventListener('click', () => {
+            window.location.href = 'selfie.html'; // Redirect to selfie.html
+        });
+    </script>
+</body>
+</html>

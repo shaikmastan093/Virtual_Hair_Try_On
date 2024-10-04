@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selfie Mode</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .background {
+            background-image: url('your-background-image-url.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <h1>Selfie Mode</h1>
+        <button id="selfieModeButton" class="button">Take Selfie</button>
+    </div>
+
+    <script>
+        // Redirect to selfieMode.html when the Selfie Mode button is clicked
+        document.getElementById('selfieModeButton').addEventListener('click', () => {
+            window.location.href = 'selfieMode.html'; // Redirect to selfieMode.html
+        });
+    </script>
+</body>
+</html>

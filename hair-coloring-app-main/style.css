@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Courier;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+label, p {
+  font-size: 12.5px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #fafbfb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  /* color: white; */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.removed {
+  display: hidden;
+  z-index: -1;
+}
+
+.invisible {
+  opacity: 0.2;
+}
+
+/* General styles */
+.videoView {
+  width: 100%; /* Full width for better responsiveness */
+}
+.segmentOnClick {
+  position: relative;
+  float: left;
+  width: 200px;
+  margin: 2% 1%;
+  cursor: pointer;
+}
+
+.segmentOnClick p {
+  padding: 5px;
+  background-color: #007f8b;
+  color: #fff;
+  z-index: 2;
+  font-size: 12px;
+  margin: 0;
+}
+
+.segmentOnClick {
+  z-index: 0;
+}
+
+.segmentOnClick canvas {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+}
+
+.segmentOnClick img {
+  width: 100%;
+  opacity: 1;
+}
+
+.flex-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: top;
+}
+/* Color picker container styles */
+.color-picker {
+  display: flex;
+  justify-content: center;      /* Center the color buttons horizontally */
+  align-items: center;          /* Center the color buttons vertically */
+  margin: 20px 0;              /* Add some margin above and below */
+  flex-wrap: wrap;             /* Allow buttons to wrap to the next line on smaller screens */
+}
+
+/* Color button styles */
+.colorButton {
+  cursor: pointer;              /* Add pointer cursor for interactivity */
+  margin: 0 10px;              /* Space between buttons */
+  transition: transform 0.2s;  /* Add a little animation */
+  width: 40px;                 /* Set a fixed width */
+  height: 40px;                /* Set a fixed height */
+  border-radius: 50%;          /* Make buttons circular */
+}
+.colorButton:hover {
+  transform: scale(1.5);  /* Scale up on hover */
+}
+/* Container for the webcam */
+.video-container {
+  display: flex;                /* Enable flexbox */
+  justify-content: center;      /* Center horizontally */
+  align-items: center;          /* Center vertically */
+  margin: 20px 0;              /* Add some margin above and below */
+}
+/* Webcam styles */
+.videoView {
+  width: 100%;                  /* Full width for better responsiveness */
+  max-width: 400px;            /* Optional: limit max width for larger screens */
+  height: auto;                 /* Maintain aspect ratio */
+}
+#webcamButton {
+  background-color: #007f8b; /* Background color */
+  color: white; /* Text color */
+  font-size: 1.5em; /* Font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+}
+
+#webcamButton:hover {
+  background-color: #005f6b; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .video-container {
+    flex-direction: column;     /* Stack webcam and buttons vertically on mobile */
+  }
+
+  .color-picker {
+    flex-direction: column;     /* Stack buttons vertically */
+  }
+
+  .colorButton {
+    margin: 5px 0;             /* Add margin for vertical spacing */
+  }
+
+
+  /* Additional styles to ensure the video appears correctly */
+  canvas {
+      width: 100%; /* Ensure canvas width is full */
+      height: auto; /* Auto height */
+      transform: rotate(90deg); /* Rotate canvas for vertical view */
+      transform-origin: left top; /* Set rotation origin to top left */
+  }
+}
