@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .mobile-container {
+            max-width: 480px;
+            margin: auto;
+            background-color: #555;
+            height: auto; /* Adjust height to auto for content */
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            position: relative;
+        }
+
+        .topnav a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: flex; /* Makes the icon centered */
+            align-items: center; /* Aligns items vertically */
+        }
+
+        .topnav .heading {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 20px; /* Increased font size for better visibility */
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav .search-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .topnav .search-input {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            opacity: 0;
+            padding: 5px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            transition: width 0.5s, opacity 0.5s ease;
+            z-index: 1; /* Ensures it's above other elements */
+        }
+
+        .topnav .search-input:focus {
+            outline: none;
+        }
+
+        .topnav.open .search-input {
+            width: 150px;
+            opacity: 1;
+            padding-left: 10px;
+        }
+
+        .content {
+            padding: 16px;
+            text-align: center; /* Center align content */
+        }
+
+        .content img {
+            max-width: 100%; /* Responsive image */
+            height: auto;
+            border-radius: 8px; /* Slight rounding for the image */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: #4CAF50; /* Bright green color */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049; /* Darker shade of green on hover */
+        }
+
+        @media (min-width: 480px) {
+            .mobile-container {
+                max-width: 800px; /* Adjust width for larger screens */
+            }
+
+            .topnav .search-area {
+                margin-left: auto; /* Pushes search area to the right on larger screens */
+            }
+
+            .topnav .search-input {
+                width: 200px; /* Make it wider on larger screens */
+            }
+
+            .topnav .heading {
+                font-size: 24px; /* Increase heading font size on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a href="#home" class="active">
+            <i class="fa fa-bars"></i> <!-- Left Menu Icon -->
+        </a>
+        <div class="heading">Rudraam Virtual Hair Try-On </div> <!-- Middle Heading -->
+        <div class="search-area">
+            <a href="javascript:void(0);" class="icon" id="search-icon">
+                <i class="fa fa-search"></i> <!-- Right Search Icon -->
+            </a>
+            <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <!-- Replace the placeholder URL with your actual image URL -->
+        <img src="./assets/Hair.png" alt="Virtual Hair Styles"> 
+        <h3>Try on Shades Live Now!</h3>
+        <p>Experience our latest shades virtually with our augmented reality feature. Try them on before you buy!</p>
+        <a href="#" class="btn">Try on Shades Live Now</a> <!-- Button -->
+    </div>
+</div>
+
+<script>
+    document.getElementById('search-icon').addEventListener('click', function() {
+        const searchArea = document.querySelector('.topnav');
+        searchArea.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>

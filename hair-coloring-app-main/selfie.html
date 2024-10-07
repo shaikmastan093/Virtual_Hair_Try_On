@@ -16,18 +16,24 @@
             background-color: #f4f4f4;
         }
         .background {
-            background-image: url('your-background-image-url.jpg'); /* Replace with your background image URL */
+            background-image: url('assets/.png'); /* Replace with your actual image path */
             background-size: cover;
-            height: 100vh;
+            background-position: center;
+            height: 51vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            margin-bottom: 20px;
         }
         .button {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -37,19 +43,29 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .selfie-image {
+            width: 300px; /* Adjust width as needed */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Responsive */
         }
     </style>
 </head>
 <body>
     <div class="background">
+        <img src="./assets/rudra.png" alt="Virtual Hair Styles" class="selfie-image"> 
         <h1>Selfie Mode</h1>
         <button id="selfieModeButton" class="button">Take Selfie</button>
     </div>
 
     <script>
-        // Redirect to selfieMode.html when the Selfie Mode button is clicked
         document.getElementById('selfieModeButton').addEventListener('click', () => {
-            window.location.href = 'selfieMode.html'; // Redirect to selfieMode.html
+            window.location.href = 'selfieMode.html';
         });
     </script>
 </body>

@@ -1,19 +1,29 @@
-body {
+
+/* General Styles */
+* {
   margin: 0;
   padding: 0;
-  font-family: Courier;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
+body {
+  background-color: #f4f4f4;
+
+}
+
+/* Headings */
 h2 {
   font-size: 1.5em;
 }
-
 label, p {
   font-size: 12.5px;
 }
 
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
 .App-logo {
@@ -33,8 +43,6 @@ label, p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  /* color: white; */
 }
 
 .App-link {
@@ -102,33 +110,32 @@ label, p {
   justify-content: center;
   align-items: top;
 }
-/* Color picker container styles */
+/* Color picker styles */
 .color-picker {
   display: flex;
-  justify-content: center;      /* Center the color buttons horizontally */
-  align-items: center;          /* Center the color buttons vertically */
-  margin: 20px 0;              /* Add some margin above and below */
-  flex-wrap: wrap;             /* Allow buttons to wrap to the next line on smaller screens */
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
 
-/* Color button styles */
 .colorButton {
-  cursor: pointer;              /* Add pointer cursor for interactivity */
-  margin: 0 10px;              /* Space between buttons */
-  transition: transform 0.2s;  /* Add a little animation */
-  width: 40px;                 /* Set a fixed width */
-  height: 40px;                /* Set a fixed height */
-  border-radius: 50%;          /* Make buttons circular */
+  cursor: pointer;
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.2s;
 }
 .colorButton:hover {
-  transform: scale(1.5);  /* Scale up on hover */
+  transform: scale(1.5); /* Scale up on hover */
 }
 /* Container for the webcam */
+/* Webcam styles */
 .video-container {
-  display: flex;                /* Enable flexbox */
-  justify-content: center;      /* Center horizontally */
-  align-items: center;          /* Center vertically */
-  margin: 20px 0;              /* Add some margin above and below */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
 }
 /* Webcam styles */
 .videoView {
@@ -136,42 +143,91 @@ label, p {
   max-width: 400px;            /* Optional: limit max width for larger screens */
   height: auto;                 /* Maintain aspect ratio */
 }
+/* Button styles */
 #webcamButton {
-  background-color: #007f8b; /* Background color */
-  color: white; /* Text color */
-  font-size: 1.5em; /* Font size */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 20px; /* Padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+  background-color: #007f8b;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+video, canvas {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 #webcamButton:hover {
-  background-color: #005f6b; /* Darker shade on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #005f6b;
+  transform: scale(1.05);
 }
 
 /* Mobile styles */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .video-container {
-    flex-direction: column;     /* Stack webcam and buttons vertically on mobile */
+      flex-direction: column; /* Stack webcam and buttons vertically on mobile */
   }
 
   .color-picker {
-    flex-direction: column;     /* Stack buttons vertically */
+      flex-direction: column; /* Stack buttons vertically */
   }
 
   .colorButton {
-    margin: 5px 0;             /* Add margin for vertical spacing */
+      margin: 5px 0; /* Add margin for vertical spacing */
   }
 
-
-  /* Additional styles to ensure the video appears correctly */
   canvas {
       width: 100%; /* Ensure canvas width is full */
       height: auto; /* Auto height */
       transform: rotate(90deg); /* Rotate canvas for vertical view */
       transform-origin: left top; /* Set rotation origin to top left */
   }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 15px;
+    color: white;
+}
+
+.menu-icon img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.search-bar input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search-bar input:focus {
+    outline: none;
 }
